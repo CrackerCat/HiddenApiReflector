@@ -36,9 +36,9 @@ import java.lang.reflect.Method;
  * </p>
  * <p>This class is thread safe.</p>
  * <p class="note"><strong>Note:</strong>
- * Most methods require the {@link android.Manifest.permission#BLUETOOTH}
+ * Most methods require the {@link Manifest.permission#BLUETOOTH}
  * permission and some also require the
- * {@link android.Manifest.permission#BLUETOOTH_ADMIN} permission.
+ * {@link Manifest.permission#BLUETOOTH_ADMIN} permission.
  * </p>
  * <div class="special reference">
  * <h3>Developer Guides</h3>
@@ -55,26 +55,6 @@ import java.lang.reflect.Method;
 public class BluetoothAdapter {
 
     private static final String TAG = "BluetoothAdapter";
-
-    /**
-     * Indicates that both inquiry scan and page scan are disabled on the local
-     * Bluetooth adapter. Therefore this device is neither discoverable
-     * nor connectable from remote Bluetooth devices.
-     */
-    public static final int SCAN_MODE_NONE = 20;
-    /**
-     * Indicates that inquiry scan is disabled, but page scan is enabled on the
-     * local Bluetooth adapter. Therefore this device is not discoverable from
-     * remote Bluetooth devices, but is connectable from remote devices that
-     * have previously discovered this device.
-     */
-    public static final int SCAN_MODE_CONNECTABLE = 21;
-    /**
-     * Indicates that both inquiry scan and page scan are enabled on the local
-     * Bluetooth adapter. Therefore this device is both discoverable and
-     * connectable from remote Bluetooth devices.
-     */
-    public static final int SCAN_MODE_CONNECTABLE_DISCOVERABLE = 23;
 
     /**
      * frameworks/base/core/java/android/bluetooth/BluetoothAdapter.java
@@ -195,7 +175,7 @@ public class BluetoothAdapter {
      * <p>Use {@link BluetoothServerSocket#accept} to retrieve incoming
      * connections from a listening {@link BluetoothServerSocket}.
      * <p>Valid RFCOMM channels are in range 1 to 30.
-     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * <p>Requires {@link Manifest.permission#BLUETOOTH_ADMIN}
      *
      * @param channel RFCOMM channel to listen on
      * @return a listening RFCOMM BluetoothServerSocket
