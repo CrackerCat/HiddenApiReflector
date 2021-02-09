@@ -29,4 +29,21 @@ public class ServiceManager {
         }
         return null;
     }
+
+    /**
+     * Return a list of all currently running services.
+     * @return an array of all currently running services, or <code>null</code> in
+     * case of an exception
+     */
+    public static String[] listServices() {
+        try {
+            Method method = Class.forName("android.os.ServiceManager")
+                    .getDeclaredMethod("listServices");
+            Log.d(TAG, "Invoke ServiceManager.listServices()");
+            return (String[]) method.invoke(null);
+        } catch (ReflectiveOperationException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
