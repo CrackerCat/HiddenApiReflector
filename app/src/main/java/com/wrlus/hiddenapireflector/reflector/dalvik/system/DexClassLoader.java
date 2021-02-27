@@ -1,7 +1,5 @@
 package com.wrlus.hiddenapireflector.reflector.dalvik.system;
 
-import android.util.Log;
-
 import java.lang.reflect.Constructor;
 
 /**
@@ -45,8 +43,6 @@ public class DexClassLoader {
         try {
             Constructor constructor = Class.forName("dalvik.system.DexClassLoader")
                     .getDeclaredConstructor(String.class, String.class, String.class, ClassLoader.class);
-            Log.d(TAG, "Invoke DexClassLoader.newInstance("+dexPath+", "
-                    +optimizedDirectory+", "+librarySearchPath+", "+parent+")");
             return constructor.newInstance(dexPath, optimizedDirectory, librarySearchPath, parent);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

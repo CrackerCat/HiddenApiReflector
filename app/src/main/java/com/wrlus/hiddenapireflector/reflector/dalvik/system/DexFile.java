@@ -1,7 +1,5 @@
 package com.wrlus.hiddenapireflector.reflector.dalvik.system;
 
-import android.util.Log;
-
 import java.io.File;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
@@ -31,7 +29,6 @@ public class DexFile {
         try {
             Constructor constructor = Class.forName("dalvik.system.DexFile")
                     .getDeclaredConstructor(File.class);
-            Log.d(TAG, "Invoke DexFile.newInstance("+file+")");
             return constructor.newInstance(file);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -64,7 +61,6 @@ public class DexFile {
         try {
             Method method = Class.forName("dalvik.system.DexFile")
                     .getDeclaredMethod("loadClass", String.class, ClassLoader.class);
-            Log.d(TAG, "Invoke DexFile.loadClass("+name+", "+loader+")");
             return (Class<?>) method.invoke(dexFile, name, loader);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

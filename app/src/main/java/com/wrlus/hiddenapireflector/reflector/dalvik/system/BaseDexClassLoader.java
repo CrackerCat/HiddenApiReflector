@@ -1,7 +1,5 @@
 package com.wrlus.hiddenapireflector.reflector.dalvik.system;
 
-import android.util.Log;
-
 import java.lang.reflect.Field;
 
 /**
@@ -15,7 +13,6 @@ public class BaseDexClassLoader {
         try {
             Field field = Class.forName("dalvik.system.BaseDexClassLoader").getDeclaredField("pathList");
             field.setAccessible(true);
-            Log.d(TAG, "Invoke BaseDexClassLoader.getPathList("+classLoader+")");
             return field.get(classLoader);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

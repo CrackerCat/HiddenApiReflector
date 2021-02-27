@@ -1,7 +1,6 @@
 package com.wrlus.hiddenapireflector.reflector.dalvik.system;
 
 import android.annotation.SuppressLint;
-import android.util.Log;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -35,7 +34,6 @@ public class DexPathList {
         try {
             Field field = Class.forName("dalvik.system.DexPathList").getDeclaredField("dexElements");
             field.setAccessible(true);
-            Log.d(TAG, "Invoke DexPathList.getDexElements()");
             return (Object[]) field.get(dexPathList);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -52,7 +50,6 @@ public class DexPathList {
         try {
             Field field = Class.forName("dalvik.system.DexPathList").getDeclaredField("dexElements");
             field.setAccessible(true);
-            Log.d(TAG, "Invoke DexPathList.setDexElements("+dexElementsObj+")");
             field.set(dexPathList, dexElementsObj);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -64,7 +61,6 @@ public class DexPathList {
         try {
             Method method = Class.forName("dalvik.system.DexPathList")
                     .getDeclaredMethod("findClass", String.class, List.class);
-            Log.d(TAG, "Invoke DexPathList.findClass("+name+", "+suppressed+")");
             return (Class<?>) method.invoke(dexPathList, name, suppressed);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

@@ -1,7 +1,6 @@
 package com.wrlus.hiddenapireflector.reflector.android.os;
 
 import android.os.IBinder;
-import android.util.Log;
 
 import java.lang.reflect.Method;
 
@@ -22,7 +21,6 @@ public class ServiceManager {
         try {
             Method method = Class.forName("android.os.ServiceManager")
                     .getDeclaredMethod("getService", String.class);
-            Log.d(TAG, "Invoke ServiceManager.getService("+name+")");
             return (IBinder) method.invoke(null, name);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -39,7 +37,6 @@ public class ServiceManager {
         try {
             Method method = Class.forName("android.os.ServiceManager")
                     .getDeclaredMethod("listServices");
-            Log.d(TAG, "Invoke ServiceManager.listServices()");
             return (String[]) method.invoke(null);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

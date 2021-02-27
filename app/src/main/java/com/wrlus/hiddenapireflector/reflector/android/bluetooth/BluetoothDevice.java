@@ -3,7 +3,6 @@ package com.wrlus.hiddenapireflector.reflector.android.bluetooth;
 import android.Manifest;
 import android.bluetooth.BluetoothSocket;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
@@ -76,7 +75,6 @@ public class BluetoothDevice {
     public static BluetoothSocket createInsecureL2capSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createInsecureL2capSocket", int.class);
-            Log.d(TAG, "Invoke BluetoothDevice.createInsecureL2capSocket("+channel+")");
             return (BluetoothSocket) method.invoke(device, channel);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -116,7 +114,6 @@ public class BluetoothDevice {
     public static BluetoothSocket createL2capSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createL2capSocket", int.class);
-            Log.d(TAG, "Invoke BluetoothDevice.createL2capSocket("+channel+")");
             return (BluetoothSocket) method.invoke(device, channel);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -145,7 +142,6 @@ public class BluetoothDevice {
     public static BluetoothSocket createInsecureRfcommSocket(android.bluetooth.BluetoothDevice device, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createInsecureRfcommSocket", int.class);
-            Log.d(TAG, "Invoke BluetoothDevice.createInsecureRfcommSocket("+port+")");
             return (BluetoothSocket) method.invoke(device, port);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -185,7 +181,6 @@ public class BluetoothDevice {
     public static BluetoothSocket createRfcommSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createRfcommSocket", int.class);
-            Log.d(TAG, "Invoke BluetoothDevice.createRfcommSocket("+channel+")");
             return (BluetoothSocket) method.invoke(device, channel);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();

@@ -3,7 +3,6 @@ package com.wrlus.hiddenapireflector.reflector.android.bluetooth;
 import android.Manifest;
 import android.bluetooth.BluetoothServerSocket;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 import androidx.annotation.RequiresPermission;
@@ -65,7 +64,6 @@ public class BluetoothAdapter {
     public static boolean setScanMode(android.bluetooth.BluetoothAdapter adapter, int mode) {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("setScanMode", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.setScanMode("+mode+")");
             return (boolean) method.invoke(adapter, mode);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -82,7 +80,6 @@ public class BluetoothAdapter {
     public static void setDiscoverableTimeout(android.bluetooth.BluetoothAdapter adapter, int timeout) {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("setDiscoverableTimeout", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.setDiscoverableTimeout("+timeout+")");
             method.invoke(adapter, timeout);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -108,7 +105,6 @@ public class BluetoothAdapter {
     public static BluetoothServerSocket listenUsingInsecureL2capOn(android.bluetooth.BluetoothAdapter adapter, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingInsecureL2capOn", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.listenUsingInsecureL2capOn("+port+")");
             return (BluetoothServerSocket) method.invoke(adapter, port);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -134,7 +130,6 @@ public class BluetoothAdapter {
     public static BluetoothServerSocket listenUsingL2capOn(android.bluetooth.BluetoothAdapter adapter, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingL2capOn", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.listenUsingL2capOn("+port+")");
             return (BluetoothServerSocket) method.invoke(adapter, port);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -157,7 +152,6 @@ public class BluetoothAdapter {
     public static BluetoothServerSocket listenUsingInsecureRfcommOn(android.bluetooth.BluetoothAdapter adapter, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingInsecureRfcommOn", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.listenUsingInsecureRfcommOn("+port+")");
             return (BluetoothServerSocket) method.invoke(adapter, port);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
@@ -187,7 +181,6 @@ public class BluetoothAdapter {
     public static BluetoothServerSocket listenUsingRfcommOn(android.bluetooth.BluetoothAdapter adapter, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingRfcommOn", int.class);
-            Log.d(TAG, "Invoke BluetoothAdapter.listenUsingRfcommOn("+channel+")");
             return (BluetoothServerSocket) method.invoke(adapter, channel);
         } catch (ReflectiveOperationException e) {
             e.printStackTrace();
