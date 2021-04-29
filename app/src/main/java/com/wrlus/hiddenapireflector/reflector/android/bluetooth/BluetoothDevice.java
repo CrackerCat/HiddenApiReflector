@@ -2,10 +2,6 @@ package com.wrlus.hiddenapireflector.reflector.android.bluetooth;
 
 import android.Manifest;
 import android.bluetooth.BluetoothSocket;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-import androidx.annotation.RequiresPermission;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -49,8 +45,6 @@ import java.lang.reflect.Method;
  */
 public class BluetoothDevice {
 
-    private static final String TAG = "BluetoothDevice";
-
     /**
      * frameworks/base/core/java/android/bluetooth/BluetoothDevice.java
      * public BluetoothSocket createInsecureL2capSocket(int channel) throws IOException;
@@ -70,8 +64,6 @@ public class BluetoothDevice {
      * permissions
      * @hide
      */
-    @RequiresApi(api = Build.VERSION_CODES.O)
-    @RequiresPermission(Manifest.permission.BLUETOOTH)
     public static BluetoothSocket createInsecureL2capSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createInsecureL2capSocket", int.class);
@@ -110,7 +102,6 @@ public class BluetoothDevice {
      * permissions
      * @hide
      */
-    @RequiresPermission(Manifest.permission.BLUETOOTH)
     public static BluetoothSocket createL2capSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createL2capSocket", int.class);
@@ -138,7 +129,6 @@ public class BluetoothDevice {
      * permissions.
      * @hide
      */
-    @RequiresPermission(Manifest.permission.BLUETOOTH_ADMIN)
     public static BluetoothSocket createInsecureRfcommSocket(android.bluetooth.BluetoothDevice device, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createInsecureRfcommSocket", int.class);
@@ -177,7 +167,6 @@ public class BluetoothDevice {
      * permissions
      * @hide
      */
-    @RequiresPermission(Manifest.permission.BLUETOOTH)
     public static BluetoothSocket createRfcommSocket(android.bluetooth.BluetoothDevice device, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothDevice.class.getMethod("createRfcommSocket", int.class);

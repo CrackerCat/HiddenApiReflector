@@ -20,8 +20,6 @@ import java.lang.reflect.Constructor;
  */
 public class DexClassLoader {
 
-    private static final String TAG = "DexClassLoader";
-
     /**
      * Creates a {@code DexClassLoader} that finds interpreted and native
      * code.  Interpreted classes are found in a set of DEX files contained

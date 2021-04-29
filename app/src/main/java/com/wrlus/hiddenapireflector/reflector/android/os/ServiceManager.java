@@ -6,8 +6,6 @@ import java.lang.reflect.Method;
 
 public class ServiceManager {
 
-    private static final String TAG = "ServiceManager";
-
     /**
      * frameworks/base/core/java/android/os/ServiceManager.java
      * public static IBinder getService(String name);

@@ -16,8 +16,6 @@ import java.lang.reflect.Method;
  */
 public class DexFile {
 
-    private static final String TAG = "DexFile";
-
     /**
      * Opens a DEX file from a given filename.
      *

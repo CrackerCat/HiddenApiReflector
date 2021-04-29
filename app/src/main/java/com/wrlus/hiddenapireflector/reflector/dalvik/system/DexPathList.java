@@ -23,8 +23,6 @@ import java.util.List;
  */
 public class DexPathList {
 
-    private static final String TAG = "DexPathList";
-
     /**
      * List of dex/resource (class path) elements.
      * Should be called pathElements, but the Facebook app uses reflection

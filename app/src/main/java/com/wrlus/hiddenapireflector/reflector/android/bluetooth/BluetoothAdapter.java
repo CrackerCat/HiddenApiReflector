@@ -2,10 +2,6 @@ package com.wrlus.hiddenapireflector.reflector.android.bluetooth;
 
 import android.Manifest;
 import android.bluetooth.BluetoothServerSocket;
-import android.os.Build;
-
-import androidx.annotation.RequiresApi;
-import androidx.annotation.RequiresPermission;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -53,8 +49,6 @@ import java.lang.reflect.Method;
  */
 public class BluetoothAdapter {
 
-    private static final String TAG = "BluetoothAdapter";
-
     /**
      * frameworks/base/core/java/android/bluetooth/BluetoothAdapter.java
      * public boolean setScanMode(int mode);
@@ -101,7 +95,6 @@ public class BluetoothAdapter {
      * permissions.
      * @hide
      */
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public static BluetoothServerSocket listenUsingInsecureL2capOn(android.bluetooth.BluetoothAdapter adapter, int port) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingInsecureL2capOn", int.class);
@@ -177,7 +170,6 @@ public class BluetoothAdapter {
      * permissions, or channel in use.
      * @hide
      */
-    @RequiresPermission(Manifest.permission.BLUETOOTH_ADMIN)
     public static BluetoothServerSocket listenUsingRfcommOn(android.bluetooth.BluetoothAdapter adapter, int channel) throws IOException {
         try {
             Method method = android.bluetooth.BluetoothAdapter.class.getMethod("listenUsingRfcommOn", int.class);
