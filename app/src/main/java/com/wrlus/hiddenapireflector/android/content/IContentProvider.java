@@ -1,10 +1,9 @@
-package com.wrlus.hiddenapireflector.reflector.android.content;
+package com.wrlus.hiddenapireflector.android.content;
 
 import android.content.ContentValues;
 import android.net.Uri;
 import android.os.Bundle;
 
-import java.awt.*;
 import java.lang.reflect.Method;
 
 public class IContentProvider {
