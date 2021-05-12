@@ -29,7 +29,7 @@ import java.lang.reflect.Method;
  * createL2capChannel(int) over Bluetooth LE.
  *
  * <p class="note"><strong>Note:</strong>
- * Requires the {@link android.Manifest.permission#BLUETOOTH} permission.
+ * Requires the {@link Manifest.permission#BLUETOOTH} permission.
  *
  * <div class="special reference">
  * <h3>Developer Guides</h3>
@@ -56,7 +56,7 @@ public class BluetoothDevice {
      * <p>Use {@link BluetoothSocket#connect} to initiate the outgoing
      * connection.
      * <p>Valid L2CAP PSM channels are in range 1 to 2^16.
-     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * <p>Requires {@link Manifest.permission#BLUETOOTH}
      *
      * @param channel L2cap PSM/channel to connect to
      * @return a RFCOMM BluetoothServerSocket ready for an outgoing connection
@@ -94,7 +94,7 @@ public class BluetoothDevice {
      * <p>Use {@link BluetoothSocket#connect} to initiate the outgoing
      * connection.
      * <p>Valid L2CAP PSM channels are in range 1 to 2^16.
-     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * <p>Requires {@link Manifest.permission#BLUETOOTH}
      *
      * @param channel L2cap PSM/channel to connect to
      * @return a RFCOMM BluetoothServerSocket ready for an outgoing connection
@@ -121,7 +121,7 @@ public class BluetoothDevice {
      * Call #connect on the returned #BluetoothSocket to begin the connection.
      * The remote device will not be authenticated and communication on this
      * socket will not be encrypted.
-     * <p>Requires {@link android.Manifest.permission#BLUETOOTH_ADMIN}
+     * <p>Requires {@link Manifest.permission#BLUETOOTH_ADMIN}
      *
      * @param port remote port
      * @return An RFCOMM BluetoothSocket
@@ -159,7 +159,7 @@ public class BluetoothDevice {
      * <p>Use {@link BluetoothSocket#connect} to initiate the outgoing
      * connection.
      * <p>Valid RFCOMM channels are in range 1 to 30.
-     * <p>Requires {@link android.Manifest.permission#BLUETOOTH}
+     * <p>Requires {@link Manifest.permission#BLUETOOTH}
      *
      * @param channel RFCOMM channel to connect to
      * @return a RFCOMM BluetoothServerSocket ready for an outgoing connection
